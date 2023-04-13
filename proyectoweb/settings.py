@@ -25,7 +25,7 @@ SECRET_KEY = '1v-av8%*2e!9*b4c_2%9vbtglbh49r$mn1xlx4e9)3y*tcf)r@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-app.fly.dev']
 
 
 # Application definition
@@ -122,3 +122,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+import os
+PORT = int(os.environ.get('PORT', 8000))
