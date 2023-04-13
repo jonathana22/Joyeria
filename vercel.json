@@ -1,0 +1,24 @@
+{
+  "version": 2,
+    "build": {
+    "env": {
+      "PIP_TARGET": "/vercel/path0",
+      "PYTHONUSERBASE": "/vercel/path1"
+    },
+    "commands": [
+      "python manage.py collectstatic --noinput",
+      "pip install -r requirements.txt --target /vercel/path0 --user --no-cache-dir"
+    ],
+    "output": {
+      "root": "public/",
+      "clean": true
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/myapp/wsgi.py"
+    }
+  ]
+}
+
